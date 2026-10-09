@@ -1,0 +1,59 @@
+/* Tablet and mobile overrides. Loaded last so these rules win. */
+
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .cta-grid { grid-template-columns: 1fr; }
+  .toolbar { grid-template-columns: 1fr 1fr; }
+  .toolbar .search { grid-column: 1 / -1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .chat-layout { grid-template-columns: 280px 1fr; }
+}
+
+@media (max-width: 820px) {
+  /* Collapsible navigation */
+  .nav-toggle { display: inline-grid; }
+  .nav-menu {
+    display: none; position: absolute; top: calc(var(--header-h) + env(safe-area-inset-top, 0px)); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px; padding: 12px 16px 16px;
+    background: var(--bg-soft); border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  .site-header.nav-open .nav-menu { display: flex; }
+  .nav-link { padding: 12px 14px; }
+  .nav-auth { margin: 8px 0 0; padding-top: 12px; border-top: 1px solid var(--line); justify-content: space-between; }
+}
+
+@media (max-width: 720px) {
+  .page { padding: 22px 0 40px; }
+  .trade-grid, .listing-cols, .form-row { grid-template-columns: 1fr; }
+  .stats-row { gap: 8px; }
+  .profile-head { padding: 16px; }
+  .update-row { flex-wrap: wrap; }
+
+  /* Chat: show either the list or the open conversation */
+  .chat-layout {
+    grid-template-columns: 1fr; width: 100%; margin: 0; border-radius: 0; border-inline: 0;
+    height: calc(100vh - var(--header-h)); height: calc(100dvh - var(--header-h));
+  }
+  .chat-layout .chat-thread { display: none; }
+  .chat-layout.show-thread .chat-list { display: none; }
+  .chat-layout.show-thread .chat-thread { display: flex; }
+  .back-btn { display: inline-grid; }
+  .msg { max-width: 86%; }
+}
+
+@media (max-width: 520px) {
+  .container { width: calc(100% - 24px); }
+  .toolbar { grid-template-columns: 1fr; }
+  .toolbar .search { grid-column: auto; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .grid-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .item-value strong { font-size: 1.5rem; }
+  .bar-row { grid-template-columns: 62px 1fr 56px; }
+  .hero { padding-top: 32px; }
+  .search-form { flex-direction: column; }
+  .brand span:last-child { font-size: 1.1rem; }
+}
+
+@media (max-width: 380px) {
+  .grid-cards { grid-template-columns: 1fr; }
+}
