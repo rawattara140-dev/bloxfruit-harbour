@@ -1,0 +1,41 @@
+/* Private chat layout. Two panes on desktop, one pane at a time on mobile (see responsive.css). */
+.chat-layout {
+  display: grid; grid-template-columns: 340px 1fr; width: min(1120px, 100% - 32px); margin: 20px auto 0;
+  height: calc(100vh - var(--header-h) - 40px); height: calc(100dvh - var(--header-h) - 40px); min-height: 460px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.chat-list { display: flex; flex-direction: column; border-right: 1px solid var(--line); min-height: 0; background: var(--bg-soft); }
+.chat-list-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.chat-list-head h1 { font-size: 1.5rem; }
+.conv-list { list-style: none; margin: 0; padding: 6px; overflow-y: auto; flex: 1; }
+.conv { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; padding: 10px; border: 0; border-radius: 12px; background: transparent; }
+.conv:hover { background: var(--surface); }
+.conv.active { background: var(--surface-2); }
+.conv-body { flex: 1; min-width: 0; }
+.conv-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.conv-name { font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.conv-time { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+.conv-bottom { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.conv-preview { color: var(--muted); font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.conv.unread .conv-preview { color: var(--text); font-weight: 600; }
+.unread-count { min-width: 20px; padding: 0 6px; border-radius: 99px; background: var(--primary); color: #fff; font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 20px; }
+
+.chat-thread { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.thread { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.thread-head { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.thread-head .who { flex: 1; min-width: 0; line-height: 1.25; }
+.thread-head .who a { color: var(--text); font-weight: 700; }
+.thread-head .who small { display: block; color: var(--muted); }
+.back-btn { display: none; }
+.messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 6px; min-height: 0; overscroll-behavior: contain; }
+.day-sep { align-self: center; color: var(--muted); font-size: 0.78rem; margin: 10px 0 4px; background: var(--bg-soft); padding: 2px 12px; border-radius: 99px; }
+.msg { max-width: min(78%, 520px); padding: 8px 12px; border-radius: 16px 16px 16px 4px; background: var(--surface-2); align-self: flex-start; overflow-wrap: anywhere; white-space: pre-wrap; }
+.msg.mine { align-self: flex-end; background: var(--primary); color: #fff; border-radius: 16px 16px 4px 16px; }
+.msg-time { display: block; font-size: 0.7rem; opacity: 0.7; margin-top: 2px; text-align: right; }
+.empty-thread-hint { margin: auto; color: var(--muted); text-align: center; }
+.composer { display: flex; gap: 8px; align-items: flex-end; padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); }
+.composer textarea { flex: 1; resize: none; max-height: 140px; min-height: 44px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; line-height: 1.4; }
+.composer textarea:focus { border-color: var(--primary-2); outline: none; }
+.thread-note { padding: 14px; text-align: center; color: var(--muted); border-top: 1px solid var(--line); }
+.chat-empty { margin: auto; max-width: 360px; }
+.chat-list .empty-state { padding: 28px 16px; }
