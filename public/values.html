@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Values: Bloxfruit Harbour</title>
+<meta name="description" content="Search Blox Fruits trading values with demand and trend information.">
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="values">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main" class="page">
+  <div class="container">
+    <div class="page-head">
+      <h1>Trading values</h1>
+      <p>Values are shown in millions (M) and are community-style estimates. They change with updates, so use them as a guide, not a guarantee.</p>
+    </div>
+
+    <div id="admin-bar" class="callout" hidden>
+      <strong>Admin:</strong> you can edit any item with its Edit button.
+      <button id="add-item" class="btn small" type="button">Add item</button>
+    </div>
+
+    <form id="filters" class="toolbar" role="search">
+      <input class="search" id="f-q" type="search" placeholder="Search by name or type" aria-label="Search values">
+      <select id="f-category" aria-label="Category"><option value="">All categories</option></select>
+      <select id="f-rarity" aria-label="Rarity"><option value="">All rarities</option></select>
+      <select id="f-sort" aria-label="Sort by">
+        <option value="value_desc">Highest value</option>
+        <option value="value_asc">Lowest value</option>
+        <option value="demand">Highest demand</option>
+        <option value="name">Name A to Z</option>
+        <option value="updated">Recently updated</option>
+      </select>
+      <button id="f-reset" class="btn ghost" type="button">Reset</button>
+    </form>
+
+    <p id="count" class="result-count" aria-live="polite"></p>
+    <div id="grid" class="grid-cards"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+  </div>
+</main>
+
+<dialog id="item-dialog" class="dialog" aria-labelledby="item-dialog-title">
+  <form id="item-form" class="dialog-inner" novalidate>
+    <div class="dialog-head"><h2 id="item-dialog-title">Edit item</h2><button type="button" class="icon-btn" id="item-close" aria-label="Close">&times;</button></div>
+    <div class="dialog-list">
+      <div class="field"><label for="i-name">Name</label><input id="i-name" maxlength="40" required></div>
+      <div class="form-row">
+        <div class="field"><label for="i-category">Category</label><input id="i-category" maxlength="30" value="Fruit"></div>
+        <div class="field"><label for="i-type">Type</label><input id="i-type" maxlength="20" placeholder="Natural, Beast..."></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="i-rarity">Rarity</label><input id="i-rarity" maxlength="20" value="Common"></div>
+        <div class="field"><label for="i-value">Value (millions)</label><input id="i-value" type="number" min="0" step="any" required><span class="field-hint">5K = 0.005, 3.99B = 3990</span></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="i-demand">Demand (1 to 10)</label><input id="i-demand" type="number" min="1" max="10" step="1" value="5"></div>
+        <div class="field"><label for="i-trend">Trend</label><select id="i-trend"><option value="rising">Rising</option><option value="stable" selected>Stable</option><option value="falling">Falling</option></select></div>
+      </div>
+      <div class="field"><label for="i-base">Base fruit (for skins, optional)</label><input id="i-base" maxlength="40" placeholder="Example: Yeti"></div>
+      <div class="field"><label for="i-price">Beli price (optional)</label><input id="i-price" type="number" min="0" step="1"></div>
+      <div class="field"><label for="i-notes">Notes (optional)</label><input id="i-notes" maxlength="200"></div>
+      <div class="field"><label for="i-image">Image link (optional)</label><input id="i-image" maxlength="500" placeholder="Leave empty to find the image automatically"><span class="field-hint">Only https links on the Blox Fruits wiki or Roblox are accepted.</span></div>
+      <p class="form-error" id="item-error" role="alert"></p>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" class="btn danger" id="item-delete" hidden>Delete</button>
+      <button type="button" class="btn ghost" id="item-cancel">Cancel</button>
+      <button type="submit" class="btn">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+<script src="/js/values.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Settings: Bloxfruit Harbour</title>
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="settings">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main" class="page">
+  <div class="container">
+    <div class="page-head"><h1>Settings</h1><p>Manage your profile, Roblox connection, password and blocked players.</p></div>
+
+    <div class="settings-grid">
+      <section class="card" aria-labelledby="s-profile">
+        <h2 id="s-profile">Profile</h2>
+        <form id="profile-form" novalidate>
+          <div class="field"><label for="p-display">Display name</label><input id="p-display" maxlength="30" required></div>
+          <div class="field"><label for="p-bio">Bio</label><textarea id="p-bio" maxlength="200" placeholder="Tell other traders a little about you"></textarea></div>
+          <label class="check"><input type="checkbox" id="p-show-roblox"> Show my connected Roblox account on my public profile</label>
+          <p class="form-error" id="profile-error" role="alert"></p>
+          <button class="btn" type="submit">Save profile</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="s-roblox">
+        <h2 id="s-roblox">Roblox connection</h2>
+        <p class="muted">Connecting uses the official Roblox sign-in page. Bloxfruit Harbour only receives your public Roblox name and avatar. We never see your Roblox password.</p>
+        <div id="roblox-box"></div>
+      </section>
+
+      <section class="card" aria-labelledby="s-google">
+        <h2 id="s-google">Google account</h2>
+        <p class="muted">Connect Google to sign in with it. Support staff are verified through Google, so we never need a Gmail password. We only keep Google's account id and your verified email.</p>
+        <div id="google-box"></div>
+      </section>
+
+      <section class="card" id="warnings-section" aria-labelledby="s-warnings" hidden>
+        <h2 id="s-warnings">Warnings on your account</h2>
+        <div id="warnings-list"></div>
+      </section>
+
+      <section class="card" aria-labelledby="s-password">
+        <h2 id="s-password">Change password</h2>
+        <form id="password-form" novalidate>
+          <div class="field"><label for="pw-current">Current password</label><input id="pw-current" type="password" autocomplete="current-password" required></div>
+          <div class="field"><label for="pw-new">New password</label><input id="pw-new" type="password" autocomplete="new-password" minlength="8" required><span class="field-hint">At least 8 characters. You will be signed out on other devices.</span></div>
+          <div class="field"><label for="pw-confirm">Confirm new password</label><input id="pw-confirm" type="password" autocomplete="new-password" required></div>
+          <p class="form-error" id="password-error" role="alert"></p>
+          <button class="btn" type="submit">Change password</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="s-blocked">
+        <h2 id="s-blocked">Blocked players</h2>
+        <div id="blocked-list"></div>
+      </section>
+
+      <section class="card" id="admin-section" aria-labelledby="s-admin" hidden>
+        <h2 id="s-admin">Staff: reports</h2>
+        <p class="muted">Reports include only the last 10 messages the reporter chose to attach. Tickets, orders, inventory and moderation are in the <a href="/staff.html">staff panel</a>. Trading values are edited on the <a href="/values.html">Values page</a> (administrator only).</p>
+        <div id="reports-list"></div>
+      </section>
+
+      <section class="card danger-zone" aria-labelledby="s-delete">
+        <h2 id="s-delete">Delete account</h2>
+        <p class="muted">This permanently deletes your account, listings and messages. It cannot be undone.</p>
+        <form id="delete-form" novalidate>
+          <div class="field"><label for="del-password">Your password</label><input id="del-password" type="password" autocomplete="current-password" required></div>
+          <label class="check"><input type="checkbox" id="del-confirm"> I understand this cannot be undone</label>
+          <p class="form-error" id="delete-error" role="alert"></p>
+          <button class="btn danger" type="submit">Delete my account</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+<script src="/js/profile.js" defer></script>
+</body>
+</html>

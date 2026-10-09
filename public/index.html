@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bloxfruit Harbour: Blox Fruits values and trading</title>
+<meta name="description" content="Check Blox Fruits trading values, build trades, post listings and chat privately with other players.">
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+  <noscript><div class="container"><p class="callout">Bloxfruit Harbour needs JavaScript to load values and trading tools.</p></div></noscript>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Know what your fruits are worth before you trade</h1>
+        <p class="hero-lead">Look up community trading values, compare both sides of a trade, post what you have and what you want, and talk to other players in private chat.</p>
+        <form id="hero-search" class="search-wrap" role="search" autocomplete="off">
+          <div class="search-form">
+            <input id="hero-q" type="search" placeholder="Search a fruit or item, like Leopard" aria-label="Search fruits and items">
+            <button class="btn" type="submit">Search values</button>
+          </div>
+          <ul id="suggest" class="suggest" hidden></ul>
+        </form>
+        <div class="hero-actions">
+          <a class="btn secondary" href="/values.html">Browse values</a>
+          <a class="btn ghost" href="/trading.html">Start trading</a>
+        </div>
+      </div>
+      <aside class="card spotlight" aria-labelledby="spot-h">
+        <h2 id="spot-h">Special item values</h2>
+        <p class="muted">Approximate values set by the Harbour team.</p>
+        <div id="spotlight-list"><div class="skeleton"></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Featured trading values</h2><p>The highest-value items right now.</p></div>
+        <a class="btn ghost small" href="/values.html?sort=value_desc">See all values</a>
+      </div>
+      <div id="featured" class="grid-cards"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Popular items</h2><p>Highest demand, so they are the easiest to trade.</p></div>
+        <a class="btn ghost small" href="/values.html?sort=demand">Sort by demand</a>
+      </div>
+      <div id="popular" class="grid-cards"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div><h2>Recent updates</h2><p>The latest value changes and new items.</p></div></div>
+      <div id="updates" class="update-list"><div class="skeleton"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta-grid">
+      <div class="card cta-card"><h3>Check the values</h3><p>Search, filter by rarity and sort by value or demand.</p><a class="btn" href="/values.html">Open Values</a></div>
+      <div class="card cta-card"><h3>Build a trade</h3><p>Compare both sides and post a listing so others can find you.</p><a class="btn" href="/trading.html">Open Trading</a></div>
+      <div class="card cta-card"><h3>Chat privately</h3><p>Talk one-to-one with other players. You can block and report anyone.</p><a class="btn" href="/chat.html">Open Chat</a></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+</body>
+</html>

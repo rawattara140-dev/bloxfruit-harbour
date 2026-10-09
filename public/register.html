@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign up: Bloxfruit Harbour</title>
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="register">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main" class="container auth-wrap">
+  <section class="card auth-card" aria-labelledby="auth-title">
+    <h1 id="auth-title">Create your account</h1>
+    <p class="muted">Post trade listings and chat privately. Use a password you do not use anywhere else, and never your Roblox password.</p>
+    <form id="auth-form" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" required>
+        <span class="field-hint">3 to 20 letters, numbers or underscores.</span>
+      </div>
+      <div class="field">
+        <label for="displayName">Display name (optional)</label>
+        <input id="displayName" name="displayName" maxlength="30" autocomplete="nickname">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+        <span class="field-hint">At least 8 characters.</span>
+      </div>
+      <div class="field"><label for="confirm">Confirm password</label><input id="confirm" name="confirm" type="password" autocomplete="new-password" required></div>
+      <p class="form-error" id="auth-error" role="alert"></p>
+      <button class="btn block" type="submit" id="auth-submit">Create account</button>
+    </form>
+    <p class="alt">Already have an account? <a href="/login.html">Log in</a></p>
+  </section>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+<script src="/js/auth.js" defer></script>
+</body>
+</html>

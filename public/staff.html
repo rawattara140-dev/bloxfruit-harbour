@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Staff panel: Bloxfruit Harbour</title>
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="staff">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main" class="page">
+  <div class="container">
+    <div class="page-head"><h1 id="staff-title">Staff panel</h1><p id="staff-sub">Tickets, orders, inventory and moderation. Every moderation action is recorded in the log.</p></div>
+
+    <div class="tabs" role="tablist" aria-label="Staff sections">
+      <button class="tab active" role="tab" type="button" data-tab="tickets" aria-selected="true">Tickets</button>
+      <button class="tab" role="tab" type="button" data-tab="orders" aria-selected="false">Orders</button>
+      <button class="tab" role="tab" type="button" data-tab="inventory" aria-selected="false">Inventory</button>
+      <button class="tab" role="tab" type="button" data-tab="reports" aria-selected="false">Player reports</button>
+      <button class="tab" role="tab" type="button" data-tab="users" aria-selected="false">Players</button>
+      <button class="tab" role="tab" type="button" data-tab="log" aria-selected="false">Action log</button>
+    </div>
+
+    <section id="tab-tickets" class="tab-panel" role="tabpanel">
+      <div class="toolbar"><select id="tk-status" aria-label="Ticket status"><option value="">All tickets</option><option value="open">Open</option><option value="in_progress">In progress</option><option value="resolved">Resolved</option></select></div>
+      <div id="tk-list" class="listing-stack"></div>
+    </section>
+
+    <section id="tab-orders" class="tab-panel" role="tabpanel" hidden>
+      <div class="toolbar"><select id="or-status" aria-label="Order status"><option value="">All orders</option><option value="pending">Pending</option><option value="paid">Paid</option><option value="processing">Processing</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select></div>
+      <div id="or-list" class="listing-stack"></div>
+    </section>
+
+    <section id="tab-inventory" class="tab-panel" role="tabpanel" hidden>
+      <div class="toolbar">
+        <input class="search" id="inv-q" type="search" placeholder="Search items" aria-label="Search inventory">
+        <label class="check"><input type="checkbox" id="inv-out"> Out of stock only</label>
+      </div>
+      <p id="inv-summary" class="result-count" aria-live="polite"></p>
+      <div id="inv-list" class="listing-stack"></div>
+    </section>
+
+    <section id="tab-reports" class="tab-panel" role="tabpanel" hidden><div id="rp-list" class="listing-stack"></div></section>
+
+    <section id="tab-users" class="tab-panel" role="tabpanel" hidden>
+      <div class="toolbar"><input class="search" id="us-q" type="search" placeholder="Search a username" aria-label="Search players"></div>
+      <div id="us-list" class="listing-stack"></div>
+    </section>
+
+    <section id="tab-log" class="tab-panel" role="tabpanel" hidden><div id="lg-list" class="listing-stack"></div></section>
+  </div>
+</main>
+
+<dialog id="action-dialog" class="dialog" aria-labelledby="action-title">
+  <form class="dialog-inner" id="action-form" novalidate>
+    <div class="dialog-head"><h2 id="action-title">Action</h2><button class="icon-btn" type="button" id="action-close" aria-label="Close">&times;</button></div>
+    <p class="muted" id="action-help"></p>
+    <div class="field"><label for="action-reason">Reason</label><textarea id="action-reason" rows="3" maxlength="300"></textarea></div>
+    <p class="form-error" id="action-error" role="alert"></p>
+    <div class="dialog-actions"><button class="btn" type="submit" id="action-submit">Confirm</button></div>
+  </form>
+</dialog>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+<script src="/js/staff.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Log in: Bloxfruit Harbour</title>
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="login">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main" class="container auth-wrap">
+  <section class="card auth-card" aria-labelledby="auth-title">
+    <h1 id="auth-title">Log in</h1>
+    <p class="muted">Welcome back. Use your Bloxfruit Harbour account. We never ask for your Roblox password.</p>
+    <form id="auth-form" novalidate>
+      <div class="field"><label for="username">Username</label><input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+      <p class="form-error" id="auth-error" role="alert"></p>
+      <button class="btn block" type="submit" id="auth-submit">Log in</button>
+    </form>
+    <p class="alt"><a class="btn ghost block" id="google-login" href="/api/auth/google/start?mode=login" hidden>Continue with Google</a></p>
+    <p class="alt">New here? <a href="/register.html">Create an account</a></p>
+  </section>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+<script src="/js/auth.js" defer></script>
+</body>
+</html>

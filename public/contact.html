@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact support: Bloxfruit Harbour</title>
+<meta name="theme-color" content="#0a0c16">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Figtree:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body data-page="contact">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main" class="page">
+  <div class="container narrow">
+    <div class="page-head">
+      <h1>Contact / report a problem</h1>
+      <p>Tell us what went wrong. Support reads every ticket. For rule-breaking players, use Report inside the chat instead.</p>
+    </div>
+
+    <section class="card" aria-labelledby="new-ticket-h">
+      <h2 id="new-ticket-h">New ticket</h2>
+      <form id="ticket-form" novalidate hidden>
+        <div class="field">
+          <label for="t-category">What is it about?</label>
+          <select id="t-category">
+            <option value="general">General problem</option>
+            <option value="value">Incorrect fruit value</option>
+            <option value="price">Incorrect fruit price</option>
+            <option value="trade">Trade problem</option>
+            <option value="order">Store / order problem</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field"><label for="t-message">Message</label><textarea id="t-message" rows="6" maxlength="2000" placeholder="Describe the problem. For a wrong value or price, name the fruit and what it should be."></textarea><span class="field-hint" id="t-count">0 / 2000</span></div>
+        <p class="form-error" id="ticket-error" role="alert"></p>
+        <button class="btn" type="submit">Send ticket</button>
+      </form>
+      <p id="ticket-login" hidden><a class="btn" id="ticket-login-link" href="/login.html?next=%2Fcontact.html">Log in to send a ticket</a></p>
+    </section>
+
+    <section class="section" id="my-tickets-section" aria-labelledby="my-tickets-h" hidden>
+      <div class="section-head"><div><h2 id="my-tickets-h">My tickets</h2></div></div>
+      <div id="my-tickets" class="listing-stack"></div>
+    </section>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/app.js" defer></script>
+<script src="/js/contact.js" defer></script>
+</body>
+</html>
